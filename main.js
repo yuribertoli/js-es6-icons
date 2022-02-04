@@ -119,6 +119,18 @@ const container = document.getElementById('container');
 //Mi richiamo il select del DOM (il primo che trova con questa dicitura)
 const selection = document.getElementsByTagName("select")[0];
 
+//creo dinamicamente le opzioni della select 
+//definisco un array che contenga le opzioni
+const opzioniSelect = [
+    {value: "all", frase: "Tutti"},
+    {value: "animal", frase: "Animali"},
+    {value: "vegetable", frase: "Verdure"},
+    {value: "user", frase: "Utenti"}    
+];
+
+//Inserisco dinamicamente le opzioni dell'array opzioniSelect nel DOM
+creaOpzioniSelectTag(opzioniSelect, selection);
+
 //rendo visibili al refresh della pagina tutte le icone
 iconeDOM(container, icone);
 //riporto anche la selezione sul primo indice (quindi sul valore "all")
@@ -154,7 +166,19 @@ selection.addEventListener("change", function(){
 
 
 
+//Creo una funzione per creare le opzioni
+function creaOpzioniSelectTag(arrayDiOggetti, selectTag) {
 
+    let contenuto = "";
+
+    arrayDiOggetti.forEach(elemento => {
+    
+        contenuto += `<option value="${elemento.value}">${elemento.frase}</option>`
+
+    });
+
+    selectTag.innerHTML = contenuto;
+}
 
 //Creo una funzione che richiama il container dove inserire gli elementi
 function iconeDOM(container, icone) {
@@ -189,7 +213,7 @@ function randomColor() {
     //Ciclo per 6 volte (perchè ogni colore ha 6 caratteri)
     for (i = 0; i < 6; i++) {
 
-        //aggiungo ogni volta il carattere prendendo il suo indice nell'array definito da un numero casuale tra 0 e 15
+        //aggiungo ogni volta il carattere prendendo il suo indice nell'array, definito da un numero casuale tra 0 e 15
         color = color + caratteri[Math.floor(Math.random() * 16)];
 
     }
