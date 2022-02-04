@@ -165,20 +165,11 @@ selection.addEventListener("change", function(){
 
 
 
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------FUNCTIONS---------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
 
-//Creo una funzione per creare le opzioni
-function creaOpzioniSelectTag(arrayDiOggetti, selectTag) {
 
-    let contenuto = "";
-
-    arrayDiOggetti.forEach(elemento => {
-    
-        contenuto += `<option value="${elemento.value}">${elemento.frase}</option>`
-
-    });
-
-    selectTag.innerHTML = contenuto;
-}
 
 //Creo una funzione che richiama il container dove inserire gli elementi
 function iconeDOM(container, icone) {
@@ -200,6 +191,19 @@ function iconeDOM(container, icone) {
 
 }
 
+//Creo una funzione per creare le opzioni nei tag Select
+function creaOpzioniSelectTag(arrayDiOggetti, selectTag) {
+
+    let contenuto = "";
+
+    arrayDiOggetti.forEach(elemento => {
+    
+        contenuto += `<option value="${elemento.value}">${elemento.frase}</option>`
+
+    });
+
+    selectTag.innerHTML = contenuto;
+}
 
 //Creo una funzione per creare colori casuali 
 function randomColor() {
