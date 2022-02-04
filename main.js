@@ -112,3 +112,18 @@ const icone = [
 		color: 'blue'
 	}
 ];
+
+const container = document.getElementById('container');
+
+for (i=0; i<icone.length; i++) {
+
+    let icona = `
+                <div class="icon">
+                    <i class="${icone[i].family} ${icone[i].prefix}${icone[i].name} ${icone[i].color}"></i>
+                    <h3>${icone[i].name}</h3>
+                </div>
+    `;
+    
+    container.innerHTML += icona;
+
+}
