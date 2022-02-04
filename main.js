@@ -165,7 +165,7 @@ function iconeDOM(container, icone) {
     icone.forEach(oggetto => {
         
         contenuto += `   <div class="icon">
-                            <i class="${oggetto.family} ${oggetto.prefix}${oggetto.name} ${oggetto.color}"></i>
+                            <i style='color:${randomColor()};' class="${oggetto.family} ${oggetto.prefix}${oggetto.name}"></i>
                             <h3>${oggetto.name}</h3>
                         </div>  `;
     
@@ -175,3 +175,25 @@ function iconeDOM(container, icone) {
     container.innerHTML = contenuto;
 
 }
+
+
+//Creo una funzione per creare colori casuali 
+function randomColor() {
+
+    //separo i caratteri scritti per formare un array
+    let caratteri = '0123456789ABCDEF'.split('');
+
+    //setto la variabile sul primo carattere che serve per definire tutti i colori
+    let color = "#";
+
+    //Ciclo per 6 volte (perchè ogni colore ha 6 caratteri)
+    for (i = 0; i < 6; i++) {
+
+        //aggiungo ogni volta il carattere prendendo il suo indice nell'array definito da un numero casuale tra 0 e 15
+        color = color + caratteri[Math.floor(Math.random() * 16)];
+
+    }
+
+    return color;
+}
+
