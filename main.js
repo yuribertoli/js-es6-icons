@@ -136,8 +136,8 @@ selection.addEventListener("change", function(){
         //Creo una variabile che racchiude i type corrispondenti al .value corrente
         let iconeFiltrate = icone.filter(oggetto => {
 
-            if (oggetto.type == selection.value) {
-                return true;
+            if (oggetto.type == selection.value) { //se i valori in type corrispondo a quelli del valore corrente
+                return true;                       //ritorno true, quindi automaticamente vengono pushati nella variabile creata iconeFiltrate 
             } 
             return false;
 
@@ -161,6 +161,7 @@ function iconeDOM(container, icone) {
 
     let contenuto = "";
 
+    //per ogni oggetto dell'array icone creo un contenuto che aggiungo alla sua variabile 
     icone.forEach(oggetto => {
         
         contenuto += `   <div class="icon">
@@ -170,6 +171,7 @@ function iconeDOM(container, icone) {
     
     });
 
+    //aggiungo tutti i contenuti creati dentro container
     container.innerHTML = contenuto;
 
 }
