@@ -218,7 +218,7 @@ function randomColor() {
     for (i = 0; i < 6; i++) {
 
         //aggiungo ogni volta il carattere prendendo il suo indice nell'array, definito da un numero casuale tra 0 e 15
-        color = color + caratteri[Math.floor(Math.random() * 16)];
+        color = color + caratteri[Math.floor(Math.random() * caratteri.length)];
 
     }
 
