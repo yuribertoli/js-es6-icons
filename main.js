@@ -210,6 +210,7 @@ function randomColor() {
 
     //separo i caratteri scritti per formare un array
     let caratteri = '0123456789ABCDEF'.split('');
+	// let caratteri = '0123456789ABCDEF'; anche questo puo' funzionare perchè le stringhe vengono viste come array di caratteri, quindi ogni carattere è associato ad un numero di indice
 
     //setto la variabile sul primo carattere che serve per definire tutti i colori
     let color = "#";
